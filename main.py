@@ -10,12 +10,12 @@ response = requests.get(url)
 html_content = response.text;
 
 soup = BeautifulSoup(html_content, "html.parser");
-all_the_hrefs = soup.find_all("a", class_=False)
+all_the_atags = soup.find_all("a", class_=False)
 i=0
-for href in all_the_hrefs:
-     if href['href'] == '/': break 	
+for atag in all_the_atags:
+     if atag['href'] == '/': break 	
      i += 1
-     if i>3: print(href)
+     if i>3: print(atag)
 		
 
 
